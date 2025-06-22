@@ -43,7 +43,7 @@ struct PageInfo
 
 std::vector<PageInfo> validated_pages;
 
-// __attribute__((section("__RESTRICT,__restrict"), used)) const char restrict_data[] = "WhY dOeSnT mY dYlIb InJeCtIoN wOrK";
+// __attribute__((section("__RESTRICT,__restrict"), used)) const char restrict_data[] = "WhY dOeSnT mY dYlIb InJeCtIoN wOrK"; // This prevents DYLD_INSERT_LIBRARIES injection
 __attribute__((section("__DATA,__hash"), used)) static struct embedded_hash_placeholder_t
 {
     uint64_t real_hash; // This will be overwritten by another program with the actual hash
